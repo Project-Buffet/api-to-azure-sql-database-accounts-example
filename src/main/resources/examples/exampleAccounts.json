@@ -1,0 +1,24 @@
+[
+  {
+      "accountId": "0015e00000L781rAAB",
+      "accountName": "Cleveland Clinic",
+      "street": "333 Helpful Highway",
+      "city": "Raleigh",
+      "state": "NC",
+      "zipCode": "22839",
+      "accountType": "Installation Partner",
+      "website": "clevelandclinic.com",
+      "phone": "123-456-7890"
+  },
+  {
+      "accountId": "0015e00000L781rAAB",
+      "accountName": "Cleveland Clinic",
+      "street": "333 Helpful Highway",
+      "city": "Raleigh",
+      "state": "NC",
+      "zipCode": "22839",
+      "accountType": "Installation Partner",
+      "website": "clevelandclinic.com",
+      "phone": "123-456-7890"
+  }
+]

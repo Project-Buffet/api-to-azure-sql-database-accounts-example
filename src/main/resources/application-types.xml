@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="projectDetails" format="json">
+      <types:shape format="weave" example="examples/exampleProjectDetails.json"><![CDATA[%dw 2.0
+
+type projectDetails = Array<{|  ProjectName: String,   ProjectManager: String,   Description: String,   Stage: String,   Status: String,   Deadline: String,   InstallationType: String,   id: String|}> {"example": "[{\\\"ProjectName\\\":\\\"Olson, MacGyver and Hagenes\\\",\\\"ProjectManager\\\":\\\"Byron Aufderhar PhD\\\",\\\"Description\\\":\\\"aperiam vel totam\\\",\\\"Stage\\\":\\\"Stage 1\\\",\\\"Status\\\":\\\"Status 1\\\",\\\"Deadline\\\":\\\"2022-05-18T05:14:21.283Z\\\",\\\"InstallationType\\\":\\\"InstallationType 1\\\",\\\"id\\\":\\\"1\\\"},{\\\"ProjectName\\\":\\\"Olson, MacGyver and Hagenes\\\",\\\"ProjectManager\\\":\\\"Byron Aufderhar PhD\\\",\\\"Description\\\":\\\"aperiam vel totam\\\",\\\"Stage\\\":\\\"Stage 1\\\",\\\"Status\\\":\\\"Status 1\\\",\\\"Deadline\\\":\\\"2022-05-18T05:14:21.283Z\\\",\\\"InstallationType\\\":\\\"InstallationType 1\\\",\\\"id\\\":\\\"1\\\"}]"}
+
+]]></types:shape>
+    </types:type>
+    <types:type name="accountsExamples" format="json">
+      <types:shape format="weave" example="examples/exampleAccounts.json"><![CDATA[%dw 2.0
+
+type accountsExamples = Array<{|  accountId: String,   accountName: String,   street: String,   city: String,   state: String,   zipCode: String,   accountType: String,   website: String,   phone: String|}> {"example": "[{\\\"accountId\\\":\\\"0015e00000L781rAAB\\\",\\\"accountName\\\":\\\"Cleveland Clinic\\\",\\\"street\\\":\\\"333 Helpful Highway\\\",\\\"city\\\":\\\"Raleigh\\\",\\\"state\\\":\\\"NC\\\",\\\"zipCode\\\":\\\"22839\\\",\\\"accountType\\\":\\\"Installation Partner\\\",\\\"website\\\":\\\"clevelandclinic.com\\\",\\\"phone\\\":\\\"123-456-7890\\\"},{\\\"accountId\\\":\\\"0015e00000L781rAAB\\\",\\\"accountName\\\":\\\"Cleveland Clinic\\\",\\\"street\\\":\\\"333 Helpful Highway\\\",\\\"city\\\":\\\"Raleigh\\\",\\\"state\\\":\\\"NC\\\",\\\"zipCode\\\":\\\"22839\\\",\\\"accountType\\\":\\\"Installation Partner\\\",\\\"website\\\":\\\"clevelandclinic.com\\\",\\\"phone\\\":\\\"123-456-7890\\\"}]"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#8fd52c0c-ab56-482c-b815-4f4b65ed0125">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="accountsExamples"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>
